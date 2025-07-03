@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sakshi More - Portfolio</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <i class="fas fa-user-circle"></i>
+      <span>Sakshi More</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="nav-link active" data-target="home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#" class="nav-link" data-target="about"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#" class="nav-link" data-target="skills"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="#" class="nav-link" data-target="projects"><i class="fas fa-briefcase"></i> Projects</a></li>
+        <li><a href="#" class="nav-link" data-target="contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section id="home" class="section active-section">
+      <div class="home-content">
+        <img src="sakshi.jpg" alt="Sakshi More Profile" class="profile-photo" />
+        <h1>Hello, I'm Sakshi More</h1>
+        <p class="summary">
+          BSc IT student passionate about web development, cybersecurity, and ethical hacking.
+          Skilled in Java, Python, Node.js, and more.
+        </p>
+        <button id="lets-talk" class="btn-primary">Let's Talk</button>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <p>
+          I’m <strong>Sakshi More</strong>, a dedicated BSc IT student with a passion for technology, cybersecurity, and creating impactful websites.
+          I completed a Business Development Internship at Younity Cyber Security and Ethical Hacking.
+        </p>
+        <ul class="personal-skills">
+          <li>Time Management</li>
+          <li>Leadership</li>
+          <li>Problem Solving</li>
+          <li>Creativity</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill"><i class="fab fa-html5"></i> HTML</div>
+        <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
+        <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="skill"><i class="fab fa-java"></i> Java</div>
+        <div class="skill"><i class="fab fa-python"></i> Python</div>
+        <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
+        <div class="skill"><i class="fas fa-shield-alt"></i> Cybersecurity</div>
+        <div class="skill"><i class="fas fa-user-secret"></i> Ethical Hacking</div>
+        <div class="skill"><i class="fas fa-mobile-alt"></i> Mobile Development</div>
+        <div class="skill"><i class="fas fa-network-wired"></i> Networking</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <h3>Vehicle Management System</h3>
+          <p>Built using Node.js for managing vehicles and maintenance schedules.</p>
+        </div>
+        <div class="project-card">
+          <h3>Job Portal</h3>
+          <p>Developed using Advanced Web Programming to connect employers and candidates.</p>
+        </div>
+        <div class="project-card">
+          <h3>Clinic Management System</h3>
+          <p>Created using Core Java to manage patients, billing, and appointments.</p>
+        </div>
+        <div class="project-card">
+          <h3>Blood Management System</h3>
+          <p>Created with Bash scripting to manage donor data and inventory in a blood bank.</p>
+        </div>
+        <div class="project-card">
+          <h3>Linked Contact Management</h3>
+          <p>Python and Tkinter-based GUI app to store and manage personal contacts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> 
+          <a href="mailto:msakshi23it@student.mes.ac.in">msakshi23it@student.mes.ac.in</a>
+        </p>
+        <p><i class="fab fa-linkedin"></i> 
+          <a href="https://www.linkedin.com/in/sakshi/more" target="_blank">
+            linkedin.com/in/sakshi/more
+          </a>
+        </p>
+        <p><i class="fab fa-github"></i> 
+          <a href="https://github.com/sakshimore1212" target="_blank">
+            github.com/sakshimore1212
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sakshi More. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    function setActiveSection(targetId) {
+      sections.forEach(section => {
+        section.classList.toggle('active-section', section.id === targetId);
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.dataset.target === targetId);
+      });
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        setActiveSection(link.dataset.target);
+      });
+    });
+
+    document.getElementById('lets-talk').addEventListener('click', () => {
+      setActiveSection('contact');
+    });
+
+    setActiveSection('home');
+  </script>
+</body>
+</html>
